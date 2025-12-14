@@ -1,0 +1,20 @@
+---
+// src/components/Schema.astro
+// Component để inject JSON-LD schema vào <head>
+
+type Props = {
+    schema: any | any[]; // Accept single schema or array of schemas
+};
+
+const { schema } = Astro.props;
+
+// Convert to array if single schema
+const schemas = Array.isArray(schema) ? schema : [schema];
+
+// Filter out undefined/null schemas
+const validSchemas = schemas.filter(Boolean);
+---
+
+{validSchemas.map((s) => (
+    <script type="application/ld+json" set:html={JSON.stringify(s)} />
+))}

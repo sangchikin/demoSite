@@ -1,0 +1,52 @@
+---
+import type { GetStaticPathsOptions, Page } from 'astro';
+import { type CollectionEntry, getCollection } from 'astro:content';
+import Pagination from '../../components/Pagination.astro';
+import PostPreview from '../../components/PostPreview.astro';
+import Subscribe from '../../components/Subscribe.astro';
+import Schema from '../../components/Schema.astro';
+import siteConfig from '../../data/site-config';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { sortItemsByDateDesc } from '../../utils/data-utils';
+import { generateCollectionPageSchema, generateBreadcrumbSchema } from '../../utils/schema-utils';
+
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+    const posts = (await getCollection('blog')).sort(sortItemsByDateDesc);
+    return paginate(posts, { pageSize: siteConfig.postsPerPage || 4 });
+}
+
+type Props = { page: Page<CollectionEntry<'blog'>> };
+
+const { page } = Astro.props;
+const blog = page.data;
+
+// Generate schemas
+const siteUrl = Astro.site?.toString() || 'https://example.com';
+const pageUrl = new URL(Astro.url.pathname, siteUrl).toString();
+
+const collectionSchema = generateCollectionPageSchema(
+    'Blog Archive',
+    'Explore personal finance insights, investment guides, and money management tips',
+    pageUrl,
+    blog.map(post => ({ url: `/blog/${post.id}/` }))
+);
+
+const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Blog', url: '/blog' }
+], siteUrl);
+---
+
+<BaseLayout 
+    title="Blog" 
+    description="Embark on a journey of personal insights and experiences through my blog" 
+    showHeader={false}
+>
+    <!-- Collection & Breadcrumb Schema -->
+    <Schema schema={[collectionSchema, breadcrumbSchema]} slot="head" />
+
+    <h1 class="mb-12 font-serif text-2xl leading-tight italic sm:mb-16 sm:text-4xl">Blog Archive</h1>
+    {blog.map((post) => <PostPreview post={post} class="mb-10 sm:mb-12" />)}
+    <Pagination page={page} class="my-16 sm:my-24" />
+    <Subscribe class="my-16 sm:my-24" />
+</BaseLayout>
