@@ -7,58 +7,35 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Chán Giàu Brand Colors - Light Mode */
 :root {
-    --text-main: #171717;
-    --bg-main: #f2f1ec;
-    --bg-muted: #eae9e1;
-    --border-main: #171717;
-}
-html.dark {
-    --text-main: #f2f1ec;
-    --bg-main: #171717;
-    --bg-muted: #242424;
-    --border-main: #f2f1ec;
+    --text-main: #3a4238;        /* Olive dark - từ brand palette */
+    --bg-main: #faf8f5;          /* Warm White - từ brand palette */
+    --bg-muted: #f5f2e7;         /* Beige - từ brand palette */
+    --border-main: #5b6043;      /* Olive - màu chủ đạo */
+    --accent: #8c6b4f;           /* Brown - điểm nhấn ấm */
+    --accent-muted: #a3b18a;     /* Muted Sage - nhẹ nhàng */
 }
 
-/* Cyan */
-/*
-:root {
-    --text-main: #162a2b;
-    --bg-main: #d6e0e2;
-    --bg-muted: #ccd8db;
-    --border-main: #162a2b;
-}
+/* Dark Mode - Giữ cảm giác ấm áp, bình tĩnh */
 html.dark {
-    --text-main: #d6e0e2;
-    --bg-main: #162a2b;
-    --bg-muted: #1c3537;
-    --border-main: #d6e0e2;
+    --text-main: #f5f2e7;        /* Beige cho text */
+    --bg-main: #2e3428;          /* Olive đậm cho background */
+    --bg-muted: #3a4238;         /* Olive medium */
+    --border-main: #a3b18a;      /* Muted Sage cho border */
+    --accent: #8c6b4f;           /* Brown giữ nguyên */
+    --accent-muted: #5b6043;     /* Olive tối hơn */
 }
-*/
-
-/* Green */
-/*
-:root {
-    --text-main: #3a4238;
-    --bg-main: #f3efe6;
-    --bg-muted: #eee9dc;
-    --border-main: #3a4238;
-}
-html.dark {
-    --text-main: #f3efe6;
-    --bg-main: #5e6c5b;
-    --bg-muted: #596756;
-    --border-main: #f3efe6;
-}
-*/
 
 @theme inline {
     --font-sans: 'Inter Variable', sans-serif;
     --font-serif: 'Newsreader Variable', serif;
     --text-color-main: var(--text-main);
+    --text-color-accent: var(--accent);
     --background-color-main: var(--bg-main);
     --background-color-muted: var(--bg-muted);
     --border-color-main: var(--border-main);
+    --border-color-accent: var(--accent-muted);
 }
 
 @layer utilities {
@@ -66,33 +43,83 @@ html.dark {
         --tw-prose-body: var(--text-color-main);
         --tw-prose-headings: var(--text-color-main);
         --tw-prose-lead: var(--text-color-main);
-        --tw-prose-links: var(--text-color-main);
+        --tw-prose-links: var(--accent);
         --tw-prose-bold: var(--text-color-main);
-        --tw-prose-counters: var(--text-color-main);
-        --tw-prose-bullets: var(--text-color-main);
-        --tw-prose-hr: var(--border-color-main);
+        --tw-prose-counters: var(--accent-muted);
+        --tw-prose-bullets: var(--accent-muted);
+        --tw-prose-hr: var(--border-color-accent);
         --tw-prose-quotes: var(--text-color-main);
-        --tw-prose-quote-borders: var(--border-color-main);
-        --tw-prose-captions: var(--text-color-main);
+        --tw-prose-quote-borders: var(--accent);
+        --tw-prose-captions: var(--accent-muted);
         --tw-prose-kbd: var(--text-color-main);
-        --tw-prose-code: var(--text-color-main);
+        --tw-prose-code: var(--accent);
         --tw-prose-th-borders: var(--border-color-main);
-        --tw-prose-td-borders: var(--border-color-main);
+        --tw-prose-td-borders: var(--border-color-accent);
     }
 
+    /* Links - tone ấm, dễ nhìn */
     .prose a {
-        @apply underline font-normal decoration-1 underline-offset-2 decoration-dashed hover:decoration-solid;
+        @apply underline font-normal decoration-1 underline-offset-2 decoration-dashed hover:decoration-solid transition-colors duration-200;
     }
 
+    /* Headings - font serif theo brand, medium weight */
     .prose :where(h1, h2, h3, h4, h5, h6) {
-        @apply font-serif font-medium;
+        @apply font-serif font-medium tracking-tight;
     }
 
+    /* Code và Strong - subtle emphasis */
     .prose :where(code, strong) {
         @apply font-medium;
     }
 
+    /* Blockquote - elegant, serif, italic như trong storytelling */
     .prose blockquote {
-        @apply font-serif font-normal italic border-none pl-0 text-[1.375em] leading-snug sm:text-[1.66667em];
+        @apply font-serif font-normal italic border-none pl-6 text-[1.375em] leading-snug sm:text-[1.66667em] opacity-90;
+        border-left: 3px solid var(--accent);
     }
+
+    /* Tables - clean, minimalist */
+    .prose table {
+        @apply border-collapse;
+    }
+
+    .prose th {
+        @apply font-medium bg-[var(--background-color-muted)];
+    }
+
+    /* Lists - subtle bullets */
+    .prose ul > li::marker {
+        color: var(--accent-muted);
+    }
+
+    .prose ol > li::marker {
+        color: var(--accent-muted);
+        @apply font-medium;
+    }
+}
+
+/* Additional brand utilities */
+@layer components {
+    .btn-primary {
+        @apply bg-[var(--accent)] text-[var(--bg-main)] px-6 py-3 rounded-sm font-medium hover:opacity-90 transition-opacity duration-200;
+    }
+
+    .card {
+        @apply bg-[var(--background-color-muted)] border border-[var(--border-color-accent)] rounded-sm p-6;
+    }
+
+    .divider {
+        @apply border-t border-[var(--border-color-accent)] opacity-30;
+    }
+}
+
+/* Smooth transitions for theme switching */
+* {
+    @apply transition-colors duration-300;
+}
+
+/* Focus states - accessible và phù hợp với brand */
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
 }
