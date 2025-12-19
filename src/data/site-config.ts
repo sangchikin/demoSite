@@ -3,7 +3,7 @@ import hero from '../assets/images/hero.jpg';
 import type { SiteConfig } from '../types';
 
 const siteConfig: SiteConfig = {
-    website: 'demosite-aw4.pages.dev',
+    website: 'https://demosite-aw4.pages.dev/',
     avatar: {
         src: avatar,
         alt: 'Ethan Donovan'
