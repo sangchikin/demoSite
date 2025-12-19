@@ -8,6 +8,7 @@ seo:
   image:
     src: '../../assets/images/post-1.jpg'
     alt: A person standing at the window
+slug: tu-do-tai-chinh
 ---
 
 ![A person standing at the window](../../assets/images/post-1.jpg)
