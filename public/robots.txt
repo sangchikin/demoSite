@@ -1,0 +1,13 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Loại bỏ các trang không có giá trị nội dung (Giảm rác cho SEO)
+Disallow: /search/
+Disallow: /tags/
+Disallow: /category/
+Disallow: /api/
+Disallow: /_astro/
+
+# Link tới Sitemap của bạn (Thay domain thật vào đây)
+Sitemap: https://demosite-aw4.pages.dev/sitemap-index.xml
