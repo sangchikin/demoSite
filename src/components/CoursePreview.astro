@@ -20,7 +20,7 @@ const difficultyColors: Record<string, string> = {
 const difficultyColor = difficultyColors[difficulty] || 'bg-gray-100 text-gray-800';
 ---
 
-<a class:list={['group flex flex-col md:flex-row items-start gap-6 md:gap-8', className]} href={`/courses/${course.id}/`}>
+<a class:list={['group flex flex-col md:flex-row items-start gap-6 md:gap-8', className]} href={`/courses/${course.id}`}>
     {image && (
         <div class="w-full md:w-48 md:flex-shrink-0">
             <CustomImage
