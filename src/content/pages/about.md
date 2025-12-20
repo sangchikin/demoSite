@@ -1,11 +1,31 @@
 ---
 title: About
+author: "Ethan Donovan"
+bio: "Passionate Financial Educator & Investment Expert with 10+ years experience in personal finance, wealth management, and financial education."
+expertise:
+  - Personal Finance
+  - Investment Strategy
+  - Stock Market Analysis
+  - Cryptocurrency
+  - Real Estate Investment
+  - Financial Planning
+qualifications:
+  - "MBA in Finance (XYZ University)"
+  - "Certified Financial Planner (CFP®)"
+  - "Chartered Investment Professional (CIP)"
+socialLinks:
+  - platform: "LinkedIn"
+    url: "https://linkedin.com/in/ethandonovan"
+  - platform: "Twitter"
+    url: "https://twitter.com/ethandonovan"
+  - platform: "YouTube"
+    url: "https://youtube.com/@ethandonovan"
 seo:
-  title: About Me
-  description: Learn more about the person behind the website and embark on a journey of inspiration and shared experiences.
+  title: "About Ethan Donovan - Financial Expert"
+  description: "Learn about Ethan Donovan, a certified financial educator with 10+ years of experience in personal finance, investments, and wealth management."
   image:
     src: '../../assets/images/about.jpg'
-    alt: A person sitting at a desk in front of a computer
+    alt: "Ethan Donovan - Financial Expert"
 ---
 
 ![Alt text for image](../../assets/images/about.jpg)

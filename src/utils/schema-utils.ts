@@ -261,8 +261,100 @@ export function generateCollectionPageSchema(
 }
 
 /**
- * Helper to convert schema object to JSON-LD script tag
+ * Generate Course Schema for financial courses
  */
-export function schemaToJsonLd(schema: any): string {
-    return JSON.stringify(schema, null, 0);
+export function generateCourseSchema(
+    title: string,
+    description: string,
+    difficulty: string,
+    duration: string,
+    author: string,
+    siteUrl: string
+) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'Course',
+        name: title,
+        description: description,
+        educationLevel: difficulty,
+        duration: duration,
+        author: {
+            '@type': 'Person',
+            name: author
+        },
+        provider: {
+            '@type': 'Organization',
+            name: siteConfig.title
+        },
+        learningResourceType: 'Course',
+        teaches: ['Finance', 'Investment', 'Money Management']
+    };
+}
+
+/**
+ * Generate FinancialProduct Schema for investment/finance tools
+ */
+export function generateFinancialProductSchema(
+    productName: string,
+    productDescription: string,
+    category: string,
+    siteUrl: string
+) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'Product',
+        name: productName,
+        description: productDescription,
+        category: category,
+        brand: {
+            '@type': 'Brand',
+            name: siteConfig.title
+        },
+        url: siteUrl
+    };
+}
+
+/**
+ * Generate Author/Expert Schema for About page
+ */
+export function generateAuthorSchema(
+    name: string,
+    bio: string,
+    expertise: string[],
+    qualifications: string[],
+    siteUrl: string,
+    imageUrl?: string
+) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        name: name,
+        description: bio,
+        url: siteUrl,
+        image: imageUrl,
+        jobTitle: 'Financial Expert',
+        expertise: expertise.join(', '),
+        qualifications: qualifications,
+        sameAs: siteConfig.socialLinks?.map(link => link.href).filter(Boolean) || [],
+        knowsAbout: ['Finance', 'Investment', 'Personal Finance', 'Trading', 'Stocks', 'Crypto', 'Real Estate']
+    };
+}
+
+/**
+ * Generate AggregateRating Schema for financial content
+ */
+export function generateAggregateRatingSchema(
+    ratingValue: number,
+    reviewCount: number,
+    bestRating: number = 5,
+    worstRating: number = 1
+) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'AggregateRating',
+        ratingValue: ratingValue,
+        reviewCount: reviewCount,
+        bestRating: bestRating,
+        worstRating: worstRating
+    };
 }

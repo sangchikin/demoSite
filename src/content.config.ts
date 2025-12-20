@@ -35,6 +35,16 @@ const pages = defineCollection({
     schema: ({ image }) =>
         z.object({
             title: z.string(),
+            // About page specific fields
+            author: z.string().optional(),
+            bio: z.string().optional(),
+            expertise: z.array(z.string()).default([]),
+            qualifications: z.array(z.string()).default([]),
+            socialLinks: z.array(z.object({
+                platform: z.string(),
+                url: z.string().url()
+            })).optional(),
+            avatar: image().optional(),
             seo: seoSchema(image).optional()
         })
 });
@@ -51,4 +61,38 @@ const projects = defineCollection({
         })
 });
 
-export const collections = { blog, pages, projects };
+const courses = defineCollection({
+    loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/courses' }),
+    schema: ({ image }) =>
+        z.object({
+            title: z.string(),
+            description: z.string().optional(),
+            difficulty: z.enum(['Beginner', 'Intermediate', 'Advanced']).default('Beginner'),
+            duration: z.string().optional(),
+            category: z.string().optional(),
+            author: z.string().optional(),
+            publishDate: z.coerce.date(),
+            updatedDate: z.coerce.date().optional(),
+            tags: z.array(z.string()).default([]),
+            isFeatured: z.boolean().default(false),
+            seo: seoSchema(image).optional()
+        })
+});
+
+const resources = defineCollection({
+    loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/resources' }),
+    schema: ({ image }) =>
+        z.object({
+            title: z.string(),
+            description: z.string().optional(),
+            resourceType: z.enum(['Guide', 'Template', 'Tool', 'Article', 'Video']).default('Guide'),
+            category: z.string().optional(),
+            tags: z.array(z.string()).default([]),
+            publishDate: z.coerce.date(),
+            updatedDate: z.coerce.date().optional(),
+            downloadUrl: z.string().url().optional(),
+            seo: seoSchema(image).optional()
+        })
+});
+
+export const collections = { blog, pages, projects, courses, resources };
