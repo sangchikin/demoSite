@@ -2,7 +2,6 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ResourcePreview from '../../components/ResourcePreview.astro';
-import Pagination from '../../components/Pagination.astro';
 
 const allResources = await getCollection('resources');
 const sortedResources = allResources.sort((a, b) => 
@@ -10,18 +9,7 @@ const sortedResources = allResources.sort((a, b) =>
 );
 
 const ITEMS_PER_PAGE = 6;
-const currentPage = parseInt(Astro.params.page || '1');
-const totalPages = Math.ceil(sortedResources.length / ITEMS_PER_PAGE);
-const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-const paginatedResources = sortedResources.slice(startIndex, startIndex + ITEMS_PER_PAGE);
-
-export async function getStaticPaths() {
-    const allResources = await getCollection('resources');
-    const totalPages = Math.ceil(allResources.length / 6);
-    return Array.from({ length: totalPages }, (_, i) => ({
-        params: { page: String(i + 1) }
-    }));
-}
+const paginatedResources = sortedResources.slice(0, ITEMS_PER_PAGE);
 
 const title = 'Resources';
 const description = 'Free financial tools, templates, guides, and resources to help you manage your money and investments.';
@@ -44,12 +32,12 @@ const description = 'Free financial tools, templates, guides, and resources to h
             </div>
         )}
 
-        {totalPages > 1 && (
-            <Pagination 
-                currentPage={currentPage}
-                totalPages={totalPages}
-                baseUrl="/resources"
-            />
+        {allResources.length > ITEMS_PER_PAGE && (
+            <div class="text-center">
+                <a href="/resources/page/2" class="inline-block text-sm font-medium hover:opacity-75 transition">
+                    View all resources →
+                </a>
+            </div>
         )}
     </div>
 </BaseLayout>

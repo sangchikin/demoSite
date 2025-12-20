@@ -2,7 +2,6 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CoursePreview from '../../components/CoursePreview.astro';
-import Pagination from '../../components/Pagination.astro';
 
 const allCourses = await getCollection('courses');
 const sortedCourses = allCourses.sort((a, b) => 
@@ -10,18 +9,7 @@ const sortedCourses = allCourses.sort((a, b) =>
 );
 
 const ITEMS_PER_PAGE = 6;
-const currentPage = parseInt(Astro.params.page || '1');
-const totalPages = Math.ceil(sortedCourses.length / ITEMS_PER_PAGE);
-const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-const paginatedCourses = sortedCourses.slice(startIndex, startIndex + ITEMS_PER_PAGE);
-
-export async function getStaticPaths() {
-    const allCourses = await getCollection('courses');
-    const totalPages = Math.ceil(allCourses.length / 6);
-    return Array.from({ length: totalPages }, (_, i) => ({
-        params: { page: String(i + 1) }
-    }));
-}
+const paginatedCourses = sortedCourses.slice(0, ITEMS_PER_PAGE);
 
 const title = 'Financial Courses';
 const description = 'Learn financial management, investing, and wealth building through our comprehensive courses.';
@@ -44,12 +32,12 @@ const description = 'Learn financial management, investing, and wealth building 
             </div>
         )}
 
-        {totalPages > 1 && (
-            <Pagination 
-                currentPage={currentPage}
-                totalPages={totalPages}
-                baseUrl="/courses"
-            />
+        {allCourses.length > ITEMS_PER_PAGE && (
+            <div class="text-center">
+                <a href="/courses/page/2" class="inline-block text-sm font-medium hover:opacity-75 transition">
+                    View all courses →
+                </a>
+            </div>
         )}
     </div>
 </BaseLayout>
