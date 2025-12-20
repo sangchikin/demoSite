@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 
@@ -12,7 +12,7 @@ export async function getStaticPaths() {
 }
 
 const { resource } = Astro.props;
-const { Content } = await resource.render();
+const { Content } = await render(resource);
 const { title, description, resourceType, category, publishDate, updatedDate, downloadUrl, tags } = resource.data;
 
 const resourceIcons: Record<string, string> = {

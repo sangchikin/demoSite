@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 
@@ -12,7 +12,7 @@ export async function getStaticPaths() {
 }
 
 const { course } = Astro.props;
-const { Content } = await course.render();
+const { Content } = await render(course);
 const { title, description, difficulty, duration, category, author, publishDate, updatedDate } = course.data;
 ---
 

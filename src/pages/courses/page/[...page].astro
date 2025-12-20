@@ -1,8 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
-import BaseLayout from '../../../../layouts/BaseLayout.astro';
-import CoursePreview from '../../../../components/CoursePreview.astro';
-import Pagination from '../../../../components/Pagination.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CoursePreview from '../../../components/CoursePreview.astro';
+import Pagination from '../../../components/Pagination.astro';
 
 const allCourses = await getCollection('courses');
 const sortedCourses = allCourses.sort((a, b) => 

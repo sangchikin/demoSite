@@ -1,8 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
-import BaseLayout from '../../../../layouts/BaseLayout.astro';
-import ResourcePreview from '../../../../components/ResourcePreview.astro';
-import Pagination from '../../../../components/Pagination.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ResourcePreview from '../../../components/ResourcePreview.astro';
+import Pagination from '../../../components/Pagination.astro';
 
 const allResources = await getCollection('resources');
 const sortedResources = allResources.sort((a, b) => 
