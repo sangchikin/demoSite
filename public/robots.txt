@@ -3,9 +3,6 @@ User-agent: *
 Allow: /
 
 # Loại bỏ các trang không có giá trị nội dung (Giảm rác cho SEO)
-Disallow: /search/
-Disallow: /tags/
-Disallow: /category/
 Disallow: /api/
 Disallow: /_astro/
 
