@@ -6,7 +6,7 @@ import FormattedDate from '../../components/FormattedDate.astro';
 export async function getStaticPaths() {
     const courses = await getCollection('courses');
     return courses.map((course) => ({
-        params: { id: course.id },
+        params: { slug: course.id },
         props: { course }
     }));
 }
