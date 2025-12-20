@@ -1,0 +1,55 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ResourcePreview from '../../components/ResourcePreview.astro';
+import Pagination from '../../components/Pagination.astro';
+
+const allResources = await getCollection('resources');
+const sortedResources = allResources.sort((a, b) => 
+    new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()
+);
+
+const ITEMS_PER_PAGE = 6;
+const currentPage = parseInt(Astro.params.page || '1');
+const totalPages = Math.ceil(sortedResources.length / ITEMS_PER_PAGE);
+const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+const paginatedResources = sortedResources.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+
+export async function getStaticPaths() {
+    const allResources = await getCollection('resources');
+    const totalPages = Math.ceil(allResources.length / 6);
+    return Array.from({ length: totalPages }, (_, i) => ({
+        params: { page: String(i + 1) }
+    }));
+}
+
+const title = 'Resources';
+const description = 'Free financial tools, templates, guides, and resources to help you manage your money and investments.';
+---
+
+<BaseLayout title={title} description={description}>
+    <div class="max-w-3xl mx-auto py-12">
+        <h1 class="font-serif text-4xl font-medium tracking-tight mb-2">{title}</h1>
+        <p class="text-lg leading-normal opacity-75 mb-12">{description}</p>
+
+        {paginatedResources.length > 0 ? (
+            <div class="space-y-8 mb-12">
+                {paginatedResources.map((resource) => (
+                    <ResourcePreview resource={resource} headingLevel="h2" />
+                ))}
+            </div>
+        ) : (
+            <div class="text-center py-12">
+                <p class="text-lg opacity-75">No resources available yet.</p>
+            </div>
+        )}
+
+        {totalPages > 1 && (
+            <Pagination 
+                currentPage={currentPage}
+                totalPages={totalPages}
+                baseUrl="/resources"
+            />
+        )}
+    </div>
+</BaseLayout>

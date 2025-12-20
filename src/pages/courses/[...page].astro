@@ -1,0 +1,55 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CoursePreview from '../../components/CoursePreview.astro';
+import Pagination from '../../components/Pagination.astro';
+
+const allCourses = await getCollection('courses');
+const sortedCourses = allCourses.sort((a, b) => 
+    new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()
+);
+
+const ITEMS_PER_PAGE = 6;
+const currentPage = parseInt(Astro.params.page || '1');
+const totalPages = Math.ceil(sortedCourses.length / ITEMS_PER_PAGE);
+const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+const paginatedCourses = sortedCourses.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+
+export async function getStaticPaths() {
+    const allCourses = await getCollection('courses');
+    const totalPages = Math.ceil(allCourses.length / 6);
+    return Array.from({ length: totalPages }, (_, i) => ({
+        params: { page: String(i + 1) }
+    }));
+}
+
+const title = 'Financial Courses';
+const description = 'Learn financial management, investing, and wealth building through our comprehensive courses.';
+---
+
+<BaseLayout title={title} description={description}>
+    <div class="max-w-3xl mx-auto py-12">
+        <h1 class="font-serif text-4xl font-medium tracking-tight mb-2">{title}</h1>
+        <p class="text-lg leading-normal opacity-75 mb-12">{description}</p>
+
+        {paginatedCourses.length > 0 ? (
+            <div class="space-y-8 mb-12">
+                {paginatedCourses.map((course) => (
+                    <CoursePreview course={course} headingLevel="h2" />
+                ))}
+            </div>
+        ) : (
+            <div class="text-center py-12">
+                <p class="text-lg opacity-75">No courses available yet.</p>
+            </div>
+        )}
+
+        {totalPages > 1 && (
+            <Pagination 
+                currentPage={currentPage}
+                totalPages={totalPages}
+                baseUrl="/courses"
+            />
+        )}
+    </div>
+</BaseLayout>
