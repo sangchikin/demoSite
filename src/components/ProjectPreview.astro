@@ -12,8 +12,15 @@ const image = project.data.seo?.image;
 ---
 
 <a class:list={['group flex flex-col gap-3 sm:gap-4 md:flex-row md:items-start md:gap-8', className]} href={`/projects/${project.id}/`}>
-    <!-- Row 1: Image + Title -->
-    <div class="flex items-start gap-4 sm:gap-6 md:gap-0 md:w-48 md:flex-shrink-0">
+    <!-- Row 1: Title + Image -->
+    <div class="flex items-start gap-4 sm:gap-6 order-2 md:order-none md:gap-0 md:flex-1">
+        <div class="grow">
+            <TitleTag
+                class="font-serif text-xl leading-tight font-medium group-hover:underline group-hover:decoration-dashed group-hover:decoration-1 group-hover:underline-offset-4 sm:text-2xl"
+            >
+                {title}
+            </TitleTag>
+        </div>
         {image && (
             <div class="w-32 sm:w-40 md:w-48 flex-shrink-0">
                 <CustomImage
@@ -23,29 +30,18 @@ const image = project.data.seo?.image;
                 />
             </div>
         )}
-        <div class="grow md:hidden">
-            <TitleTag
-                class="font-serif text-xl leading-tight font-medium group-hover:underline group-hover:decoration-dashed group-hover:decoration-1 group-hover:underline-offset-4 sm:text-2xl"
-            >
-                {title}
-            </TitleTag>
-        </div>
     </div>
 
-    <!-- Content: Title (desktop only), Description, View Project -->
-    <div class="grow">
-        <div class="hidden md:block">
-            <TitleTag
-                class="font-serif text-xl leading-tight font-medium group-hover:underline group-hover:decoration-dashed group-hover:decoration-1 group-hover:underline-offset-4 sm:text-2xl"
-            >
-                {title}
-            </TitleTag>
-        </div>
-        {description && <div class="mt-1 text-sm leading-normal italic">{description}</div>}
+    <!-- Row 2: Description (full width on mobile) -->
+    <div class="order-3 w-full md:hidden">
+        {description && <div class="text-sm leading-normal italic">{description}</div>}
     </div>
 
-    <!-- View Project Button -->
-    <div class="hidden font-serif italic opacity-0 transition group-hover:opacity-100 md:inline-flex md:shrink-0 md:items-center md:gap-1">
-        View Project <ArrowRight class="h-4 w-4 fill-current" />
+    <!-- Desktop: Description + View Project Button -->
+    <div class="hidden md:flex md:flex-col md:gap-2 md:grow">
+        {description && <div class="text-sm leading-normal italic">{description}</div>}
+        <div class="font-serif italic opacity-0 transition group-hover:opacity-100 inline-flex shrink-0 items-center gap-1">
+            View Project <ArrowRight class="h-4 w-4 fill-current" />
+        </div>
     </div>
 </a>
