@@ -1,0 +1,76 @@
+---
+import { type CollectionEntry } from 'astro:content';
+import ArrowRight from '../assets/icons/arrow-right.svg';
+import CustomImage from './CustomImage.astro';
+
+type Props = { resource: CollectionEntry<'resources'>; class?: string; headingLevel?: 'h2' | 'h3' };
+
+const { resource, class: className, headingLevel = 'h2' } = Astro.props;
+const { title, description, resourceType, category, downloadUrl } = resource.data;
+const TitleTag = headingLevel;
+const image = resource.data.seo?.image;
+
+// Icon mapping for resource types
+const resourceIcons: Record<string, string> = {
+    'Guide': '📖',
+    'Template': '📋',
+    'Tool': '🛠️',
+    'Article': '📝',
+    'Video': '🎥'
+};
+
+const resourceIcon = resourceIcons[resourceType] || '📄';
+
+// Color mapping for resource types
+const resourceColors: Record<string, string> = {
+    'Guide': 'bg-purple-100 text-purple-800',
+    'Template': 'bg-pink-100 text-pink-800',
+    'Tool': 'bg-indigo-100 text-indigo-800',
+    'Article': 'bg-orange-100 text-orange-800',
+    'Video': 'bg-red-100 text-red-800'
+};
+
+const resourceColor = resourceColors[resourceType] || 'bg-gray-100 text-gray-800';
+---
+
+<a class:list={['group flex flex-col md:flex-row items-start gap-6 md:gap-8', className]} href={`/resources/${resource.id}/`}>
+    {image && (
+        <div class="w-full md:w-48 md:flex-shrink-0">
+            <CustomImage
+                src={image.src}
+                alt={image.alt || title}
+                class="w-full h-40 md:h-32 object-cover rounded-sm"
+            />
+        </div>
+    )}
+    <div class="grow">
+        <div class="flex items-center gap-2 mb-2">
+            {resourceType && (
+                <span class:list={['text-xs font-medium px-2 py-1 rounded', resourceColor]}>
+                    {resourceIcon} {resourceType}
+                </span>
+            )}
+            {category && (
+                <span class="text-xs font-medium px-2 py-1 rounded bg-teal-100 text-teal-800">
+                    {category}
+                </span>
+            )}
+        </div>
+        <TitleTag
+            class="font-serif text-xl leading-tight font-medium group-hover:underline group-hover:decoration-dashed group-hover:decoration-1 group-hover:underline-offset-4 sm:text-2xl"
+        >
+            {title}
+        </TitleTag>
+        {description && <div class="mt-2 text-sm leading-normal text-opacity-90">{description}</div>}
+        {downloadUrl && (
+            <div class="mt-3">
+                <a href={downloadUrl} class="text-xs font-medium text-brand-accent hover:opacity-80 transition">
+                    ⬇️ Download Resource
+                </a>
+            </div>
+        )}
+    </div>
+    <div class="hidden font-serif italic opacity-0 transition group-hover:opacity-100 md:inline-flex md:shrink-0 md:items-center md:gap-1">
+        View <ArrowRight class="h-4 w-4 fill-current" />
+    </div>
+</a>

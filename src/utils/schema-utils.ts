@@ -102,16 +102,11 @@ export function generateArticleSchema(
  */
 export function generateBreadcrumbSchema(
     breadcrumbs: { name: string; url: string }[],
-    siteUrl: string,
-    authorName: string = 'Ethan Donovan'
+    siteUrl: string
 ) {
     return {
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
-        author: {
-            '@type': 'Person',
-            name: authorName
-        },
         itemListElement: breadcrumbs.map((crumb, index) => ({
             '@type': 'ListItem',
             position: index + 1,
