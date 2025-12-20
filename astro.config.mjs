@@ -6,9 +6,15 @@ import siteConfig from './src/data/site-config';
 
 // https://astro.build/config
 export default defineConfig({
-    site: siteConfig.website,
+    site: siteConfig. website,
     vite: {
         plugins: [tailwindcss()]
     },
-    integrations: [mdx(), sitemap()]
+    integrations: [
+        mdx(), 
+        sitemap({
+            // Loại trừ những route không muốn trong sitemap
+            filter: (page) => !page.startsWith('https://demosite-aw4.pages.dev/blog/')
+        })
+    ]
 });
