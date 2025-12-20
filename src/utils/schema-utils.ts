@@ -102,11 +102,16 @@ export function generateArticleSchema(
  */
 export function generateBreadcrumbSchema(
     breadcrumbs: { name: string; url: string }[],
-    siteUrl: string
+    siteUrl: string,
+    authorName: string = 'Ethan Donovan'
 ) {
     return {
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
+        author: {
+            '@type': 'Person',
+            name: authorName
+        },
         itemListElement: breadcrumbs.map((crumb, index) => ({
             '@type': 'ListItem',
             position: index + 1,
@@ -119,10 +124,17 @@ export function generateBreadcrumbSchema(
 /**
  * Generate FAQPage Schema - useful for finance guides
  */
-export function generateFAQSchema(faqs: { question: string; answer: string }[]) {
+export function generateFAQSchema(
+    faqs: { question: string; answer: string }[],
+    authorName: string = 'Ethan Donovan'
+) {
     return {
         '@context': 'https://schema.org',
         '@type': 'FAQPage',
+        author: {
+            '@type': 'Person',
+            name: authorName
+        },
         mainEntity: faqs.map(faq => ({
             '@type': 'Question',
             name: faq.question,
@@ -162,7 +174,8 @@ export function generatePersonSchema(
 export function generateFinancialServiceSchema(
     serviceName: string,
     description: string,
-    siteUrl: string
+    siteUrl: string,
+    authorName: string = 'Ethan Donovan'
 ) {
     return {
         '@context': 'https://schema.org',
@@ -170,6 +183,10 @@ export function generateFinancialServiceSchema(
         name: serviceName,
         description: description,
         url: siteUrl,
+        author: {
+            '@type': 'Person',
+            name: authorName
+        },
         provider: {
             '@type': 'Organization',
             name: siteConfig.title
@@ -183,13 +200,43 @@ export function generateFinancialServiceSchema(
 }
 
 /**
+ * Generate Tag Schema for tag pages
+ */
+export function generateTagSchema(
+    tagName: string,
+    tagDescription: string,
+    tagUrl: string,
+    itemCount: number,
+    authorName: string = 'Ethan Donovan'
+) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        name: tagName,
+        description: tagDescription,
+        url: tagUrl,
+        numberOfItems: itemCount,
+        author: {
+            '@type': 'Person',
+            name: authorName
+        },
+        mainEntity: {
+            '@type': 'Thing',
+            name: tagName,
+            description: tagDescription
+        }
+    };
+}
+
+/**
  * Generate CollectionPage Schema for blog/projects listing
  */
 export function generateCollectionPageSchema(
     pageTitle: string,
     pageDescription: string,
     pageUrl: string,
-    items: any[]
+    items: any[],
+    authorName: string = 'Ethan Donovan'
 ) {
     return {
         '@context': 'https://schema.org',
@@ -198,6 +245,10 @@ export function generateCollectionPageSchema(
         description: pageDescription,
         url: pageUrl,
         numberOfItems: items.length,
+        author: {
+            '@type': 'Person',
+            name: authorName
+        },
         mainEntity: {
             '@type': 'ItemList',
             itemListElement: items.map((item, index) => ({
