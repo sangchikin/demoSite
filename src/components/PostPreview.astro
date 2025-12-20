@@ -12,13 +12,13 @@ const TitleTag = headingLevel;
 const image = post.data.seo?.image;
 ---
 
-<a class:list={['group flex flex-col md:flex-row items-start gap-6 md:gap-8', className]} href={`/blog/${post.id}/`}>
+<a class:list={['group flex items-start gap-4 sm:gap-6 md:gap-8', className]} href={`/blog/${post.id}/`}>
     {image && (
-        <div class="w-full md:w-48 md:flex-shrink-0">
+        <div class="w-32 sm:w-40 md:w-48 flex-shrink-0">
             <CustomImage
                 src={image.src}
                 alt={image.alt || title}
-                class="w-full h-40 md:h-32 object-cover rounded-sm"
+                class="w-full h-24 sm:h-28 md:h-32 object-cover rounded-sm"
             />
         </div>
     )}
