@@ -4,26 +4,27 @@
   Easily adjust brand colors, fonts, and UI elements for future updates.
 */
 
+
 :root {
   /* Brand Color Palette */
-  --brand-text: #3a4238;
-  --brand-bg: #faf8f5;
-  --brand-bg-muted: #f5f2e7;
-  --brand-border: #5b6043;
-  --brand-accent: #8c6b4f;
-  --brand-accent-muted: #a3b18a;
+  --brand-text: #23281a;           /* Đậm hơn, dễ đọc hơn */
+  --brand-bg: #f9f7f3;             /* Sáng hơn, dịu mắt */
+  --brand-bg-muted: #ede9dd;       /* Nhẹ nhàng, không quá sáng */
+  --brand-border: #6d7a4c;         /* Olive trung tính, rõ nét */
+  --brand-accent: #a97c50;         /* Nâu ấm, nổi bật hơn */
+  --brand-accent-muted: #b7c59a;   /* Sage sáng, dịu hơn */
   /* Typography */
   --brand-font-sans: 'Inter Variable', sans-serif;
   --brand-font-serif: 'Newsreader Variable', serif;
 }
 
 html.dark {
-  --brand-text: #f5f2e7;
-  --brand-bg: #2e3428;
-  --brand-bg-muted: #3a4238;
-  --brand-border: #a3b18a;
-  --brand-accent: #8c6b4f;
-  --brand-accent-muted: #5b6043;
+  --brand-text: #f8f8f2;           /* Gần trắng, dễ đọc trên nền tối */
+  --brand-bg: #23281a;             /* Rất tối, tăng tương phản */
+  --brand-bg-muted: #2e3428;       /* Tối hơn, dịu mắt */
+  --brand-border: #b7c59a;         /* Sage sáng, nổi bật trên nền tối */
+  --brand-accent: #e0a96d;         /* Cam đất sáng, nổi bật trên nền tối */
+  --brand-accent-muted: #6d7a4c;   /* Olive trung tính */
 }
 
 body {
