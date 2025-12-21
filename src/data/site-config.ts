@@ -43,7 +43,7 @@ const siteConfig: SiteConfig = {
             href: '/lien-he'
         },
         {
-            text: 'Điều khoảng',
+            text: 'Điều khoản',
             href: '/dieu-khoan-su-dung'
         },
         {
