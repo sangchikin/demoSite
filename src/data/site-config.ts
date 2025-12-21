@@ -35,28 +35,24 @@ const siteConfig: SiteConfig = {
     ],
     footerNavLinks: [
         {
-            text: 'About',
-            href: '/about'
+            text: 'Về tôi',
+            href: '/ve-toi'
         },
         {
-            text: 'Contact',
-            href: '/contact'
+            text: 'Liên hệ',
+            href: '/lien-he'
         },
         {
-            text: 'Terms',
-            href: '/terms'
+            text: 'Điều khoảng',
+            href: '/dieu-khoan-su-dung'
         },
         {
-            text: 'Privacy',
-            href: '/privacy'
+            text: 'Chính sách',
+            href: '/chinh-sach-bao-mat'
         },
         { 
-            text: 'Disclaimer', 
-            href: '/disclaimer' 
-        },
-        {
-            text: 'Download theme',
-            href: 'https://github.com/JustGoodUI/dante-astro-theme'
+            text: 'Trách nhiệm', 
+            href: '/mien-tru-trach-nhiem' 
         }
     ],
     socialLinks: [

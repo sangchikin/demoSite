@@ -1,57 +1,69 @@
 ---
-title: Disclaimer & Important Notice
+title: TUYÊN BỐ MIỄN TRỪ TRÁCH NHIỆM
 slug: disclaimer
 ---
 
-## No Professional Financial Advice
+**Cập nhật lần cuối:** Tháng 12/2025
 
-This website and its content are provided for educational and informational purposes only. Nothing contained herein should be construed as financial advice, investment recommendation, or an offer to buy or sell any financial instruments.
+## Không phải lời khuyên tài chính
 
-The author is not a licensed financial advisor, accountant, or investment professional.  Statements made on this blog are opinions and should not be relied upon as facts.
+Toàn bộ nội dung trên website **Chán Giàu** chỉ nhằm mục đích **giáo dục và chia sẻ góc nhìn cá nhân**.
 
-## Past Performance
+- Không phải lời khuyên đầu tư
+- Không phải khuyến nghị mua/bán bất kỳ tài sản nào
+- Không thay thế tư vấn từ chuyên gia tài chính được cấp phép
 
-Past performance of any investment is not indicative of future results. Investment returns and principal value will fluctuate, so that an investor's shares, when redeemed, may be worth more or less than their original cost.
+## Rủi ro đầu tư
 
-## Risk Disclosure
+Đầu tư luôn đi kèm rủi ro, bao gồm nhưng không giới hạn:
 
-All investments carry risk, including: 
+- Bảo toàn vốn
+- Biến động thị trường
+- Lạm phát
+- Rủi ro thanh khoản
 
-- Loss of principal
-- Market volatility
-- Inflation risk
-- Liquidity risk
-- Company-specific risks
+Hiệu suất trong quá khứ **không đảm bảo** kết quả trong tương lai.
 
-Long-term investing does not eliminate risk.  There is no guarantee any strategy will be successful.
+## Hoàn cảnh cá nhân khác nhau
 
-## Individual Circumstances
+Mỗi người có:
 
-Everyone's financial situation is unique. What works for one person may not work for another. Before implementing any strategy discussed on this blog, you should: 
+- Mục tiêu tài chính khác nhau
+- Khả năng chịu rủi ro khác nhau
+- Thời gian và hoàn cảnh sống khác nhau
 
-- Evaluate your personal financial situation
-- Consider your investment goals and time horizon
-- Assess your risk tolerance
-- Consult with a qualified financial advisor or tax professional
+Những gì phù hợp với người khác **chưa chắc phù hợp với bạn**.
 
-## No Guarantee
+## Độ chính xác thông tin
 
-This website makes no representation or warranty, express or implied, as to the accuracy, completeness, or timeliness of any information provided. The author does not guarantee the accuracy of third-party information referenced on this site.
+Chán Giàu nỗ lực cung cấp thông tin chính xác và cập nhật, nhưng:
 
-## Affiliate Disclosure
+- Không đảm bảo thông tin luôn đầy đủ hoặc không có sai sót
+- Không chịu trách nhiệm cho quyết định dựa trên thông tin đó
 
-This blog may contain affiliate links. If you click on such links and make a purchase, we may earn a commission. However, this does not affect our editorial opinions or recommendations.
+## Liên kết & Affiliate (nếu có)
 
-## External Links
+Website có thể chứa:
 
-This website may contain links to external websites. We are not responsible for the content, accuracy, or practices of external websites.  Visiting external links is at your own risk.
+- Link dẫn tới website khác
+- Link affiliate (nếu có ghi rõ)
 
-## Contact for Questions
+Việc bạn mua sản phẩm qua link **không ảnh hưởng đến quan điểm nội dung**.
 
-If you have questions about this disclaimer or our content, please [contact us](/contact).
+## Xác nhận
 
----
+Bằng việc truy cập website, bạn xác nhận rằng:
 
-**⚠️ By accessing this website, you acknowledge that you have read, understood, and agree to be bound by this disclaimer.**
+- Bạn đã đọc
+- Hiểu
+- Và đồng ý với tuyên bố miễn trừ trách nhiệm này
 
-Last updated: January 2025
+## Liên hệ với Chán Giàu
+
+Nếu bạn có câu hỏi, góp ý, hoặc đơn giản là muốn chia sẻ suy nghĩ về tiền bạc và đầu tư, bạn có thể liên hệ theo các cách sau:
+
+📧 Email
+
+Gửi email về: [your-email@example.com]
+
+Tôi sẽ cố gắng phản hồi sớm nhất có thể.

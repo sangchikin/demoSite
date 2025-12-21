@@ -1,52 +1,61 @@
 ---
-title: Terms of Service
-slug: terms
+title: ĐIỀU KHOẢN SỬ DỤNG
+slug: dieu-khoan-su-dung
 seo:
-  title: Terms of Service
+  title: Điều khoản sử dụng
   description: Explore the terms and conditions of Dante website for a clear understanding of guidelines and responsibilities.
 ---
 
-Last updated: January 2025
+**Cập nhật lần cuối:** Tháng 12/2025
 
-## 1. Acceptance of Terms
+Khi truy cập và sử dụng website **Chán Giàu**, bạn đồng ý với các điều khoản dưới đây.
+Nếu bạn không đồng ý với bất kỳ nội dung nào, vui lòng ngừng sử dụng website.
 
-By accessing this website, you accept these terms and conditions in full.
+## 1. Mục đích của website
 
-## 2. Intellectual Property
+**Chán Giàu** là nền tảng chia sẻ kiến thức và góc nhìn về tài chính cá nhân & đầu tư dài hạn, nhằm giúp người đọc:
+- Hiểu rõ hơn về tiền bạc, rủi ro và thời gian
+- Ra quyết định bình tĩnh, có hiểu biết, không chạy theo làm giàu nhanh
 
-All content on this website (articles, images, logos) is protected by copyright. 
-You may not reproduce, distribute, or transmit content without permission.
+Nội dung trên website không nhằm mục đích tư vấn tài chính cá nhân hóa.
 
-## 3. User Conduct
+## 2. Quyền sở hữu nội dung
 
-You agree not to:
-- Harass, abuse, or harm others
-- Post spam or malicious content
-- Attempt to gain unauthorized access
-- Violate any laws or regulations
+Toàn bộ nội dung trên website (bài viết, hình ảnh, biểu đồ, văn bản) thuộc quyền sở hữu của **Chán Giàu**, trừ khi có ghi chú nguồn khác.
 
-## 4. Disclaimers
+Bạn **không được:**
+- Sao chép, chỉnh sửa, tái xuất bản nội dung vì mục đích thương mại
+- Trích dẫn toàn bộ bài viết mà không ghi nguồn rõ ràng
 
-This website and its content are provided "as is" without warranties.  
-We do not guarantee accuracy, completeness, or suitability of the information.
+Bạn **được phép:**
+- Trích dẫn ngắn kèm link về bài gốc
+- Chia sẻ cho mục đích học tập, phi thương mại
 
-## 5. Limitation of Liability
+## 3. Trách nhiệm của người đọc
 
-We are not liable for any direct, indirect, incidental, or consequential damages 
-arising from your use of this website.
+Khi sử dụng website, bạn đồng ý:
+- Không sử dụng nội dung cho các hoạt động vi phạm pháp luật
+- Không cố tình xuyên tạc, cắt ghép nội dung gây hiểu sai
+- Tự chịu trách nhiệm cho các quyết định tài chính cá nhân của mình
 
-## 6. External Links
+## 4. Giới hạn trách nhiệm
 
-We are not responsible for external websites linked from our site.
+Chán Giàu **không chịu trách nhiệm** cho:
+- Bất kỳ khoản lỗ, thiệt hại tài chính nào phát sinh từ việc áp dụng nội dung trên website
+- Quyết định đầu tư dựa trên diễn giải cá nhân của người đọc
 
-## 7. Changes to Terms
+Đầu tư **luôn có rủi ro**, kể cả khi đầu tư dài hạn và thận trọng.
 
-We may update these terms at any time.  Continued use means acceptance of changes.
+## 5. Liên kết ngoài
 
-## 8. Governing Law
+Website có thể chứa liên kết tới bên thứ ba.
+Chán Giàu không kiểm soát và không chịu trách nhiệm về nội dung hoặc chính sách của các website này.
 
-These terms are governed by [Your Jurisdiction] laws.
+## 6. Thay đổi điều khoản
 
-## 9. Contact Us
+Chán Giàu có thể cập nhật điều khoản sử dụng bất kỳ lúc nào.
+Việc bạn tiếp tục sử dụng website đồng nghĩa với việc chấp nhận các thay đổi đó.
 
-For questions about these terms:  [your-email@example.com]
+## 7. Liên hệ
+
+Nếu bạn có thắc mắc về điều khoản sử dụng, vui lòng liên hệ qua trang **Liên hệ**.

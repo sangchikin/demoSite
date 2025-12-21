@@ -1,56 +1,64 @@
 ---
-title: Privacy Policy
-slug: privacy
+title: CHÍNH SÁCH BẢO MẬT
+slug: chinh-sach-bao-mat
 ---
 
-Last updated: January 2025
+**Cập nhật lần cuối:** Tháng 12/2025
+Chán Giàu tôn trọng quyền riêng tư của bạn và cam kết bảo vệ dữ liệu cá nhân một cách minh bạch, tối giản.
 
-## 1. Information We Collect
+## 1. Thông tin được thu thập
 
-### Automatically Collected: 
-- Browser type and IP address
-- Pages visited and time spent
-- Referrer information
-- Device type (mobile/desktop)
+### Thông tin thu thập tự động 
 
-### Voluntary Information:
-- Email address (when subscribing to newsletter)
-- Comments on blog posts
-- Contact form submissions
+- Loại trình duyệt, thiết bị
+- Địa chỉ IP (ẩn danh)
+- Các trang đã truy cập, thời gian truy cập
+- Nguồn truy cập (referrer)
 
-## 2. How We Use Your Information
+### Thông tin bạn chủ động cung cấp
 
-- To send newsletter emails (if subscribed)
-- To improve website content and user experience
-- To respond to your inquiries
-- To analyze website traffic and usage
+- Email (khi đăng ký newsletter)
+- Nội dung bạn gửi qua form liên hệ
+- Bình luận (nếu có)
 
-## 3. Data Protection
+## 2. Mục đích sử dụng dữ liệu
 
-- Your email is never shared with third parties
-- We use industry-standard security measures
-- Data is stored securely and encrypted
+Thông tin của bạn được sử dụng để:
+- Gửi newsletter (nếu bạn đăng ký)
+- Trả lời email, câu hỏi, phản hồi
+- Cải thiện trải nghiệm và nội dung website
+- Phân tích hành vi đọc (ở mức tổng hợp, không cá nhân hóa)
 
-## 4. Third-Party Services
+## 3. Bảo mật dữ liệu
 
-This website uses: 
-- **[Email Service Provider]** (Mailchimp, Substack, etc.) - for newsletters
-- **Analytics** - to understand visitor behavior
-- **Hosting** - for website infrastructure
+- Email của bạn **không được bán hoặc chia sẻ** cho bên thứ ba
+- Dữ liệu được lưu trữ trên các nền tảng uy tín, có biện pháp bảo mật tiêu chuẩn
+- Chỉ thu thập **những gì thật sự cần thiết**
 
-These services have their own privacy policies. 
+## 4. Dịch vụ bên thứ ba
 
-## 5. Cookies
+Website có thể sử dụng:
+- Công cụ gửi email (Substack, Mailchimp…)
+- Công cụ phân tích truy cập (Analytics)
+- Dịch vụ hosting
 
-This website uses minimal tracking cookies. You can disable cookies in your browser settings.
+Mỗi bên có chính sách bảo mật riêng.
 
-## 6. Your Rights
+## 5. Cookie
 
-You have the right to: 
-- Request what data we have about you
-- Request deletion of your data
-- Unsubscribe from emails anytime
+Website sử dụng cookie tối thiểu để:
+- Phân tích lưu lượng truy cập
+- Cải thiện trải nghiệm đọc
 
-## 7. Contact Us
+Bạn có thể tắt cookie trong trình duyệt nếu muốn.
 
-For privacy concerns:  [your-email@example.com]
+## 6. Quyền của bạn
+
+Bạn có quyền:
+- Yêu cầu xem dữ liệu cá nhân đang được lưu
+- Yêu cầu xóa dữ liệu
+- Hủy đăng ký email bất kỳ lúc nào
+
+## 7. Liên hệ
+
+Mọi vấn đề liên quan đến quyền riêng tư, vui lòng liên hệ qua trang **Liên hệ**.
