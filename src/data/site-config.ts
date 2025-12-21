@@ -47,7 +47,11 @@ const siteConfig: SiteConfig = {
             href: '/dieu-khoan-su-dung'
         },
         {
-            text: 'Chính sách',
+            text: 'Chính sách biên tập',
+            href: '/chinh-sach-bien-tap'
+        },
+        {
+            text: 'Chính sách bảo mật',
             href: '/chinh-sach-bao-mat'
         },
         { 

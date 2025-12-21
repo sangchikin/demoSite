@@ -1,6 +1,7 @@
 ---
-title: About
-author: "Ethan Donovan"
+title: Liên hệ
+slug: lien-he
+author: "Sang Võ"
 bio: "Passionate Financial Educator & Investment Expert with 10+ years experience in personal finance, wealth management, and financial education."
 expertise:
   - Personal Finance
