@@ -3,8 +3,6 @@ title: Privacy Policy
 slug: privacy
 ---
 
-# Privacy Policy
-
 Last updated: January 2025
 
 ## 1. Information We Collect

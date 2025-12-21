@@ -6,8 +6,6 @@ seo:
   description: Explore the terms and conditions of Dante website for a clear understanding of guidelines and responsibilities.
 ---
 
-# Terms of Service
-
 Last updated: January 2025
 
 ## 1. Acceptance of Terms

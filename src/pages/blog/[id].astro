@@ -9,6 +9,7 @@ import Schema from '../../components/Schema.astro';
 import { sortItemsByDateDesc } from '../../utils/data-utils';
 import { slugify } from '../../utils/common-utils';
 import { generateArticleSchema, generateBreadcrumbSchema } from '../../utils/schema-utils';
+import Disclaimer from '../../components/Disclaimer.astro';
 
 export async function getStaticPaths() {
     const posts = (await getCollection('blog')).sort(sortItemsByDateDesc);
@@ -78,6 +79,8 @@ const breadcrumbSchema = generateBreadcrumbSchema([
             }
             <Button class="copy-url-button" aria-label="Copy link" data-url={href} data-tooltip-default="Copy link" data-tooltip-success="Copied">Share</Button>
         </div>
+        <!-- ADD THIS:  Disclaimer -->
+        <Disclaimer />
     </article>
     {
         (prevPost || nextPost) && (

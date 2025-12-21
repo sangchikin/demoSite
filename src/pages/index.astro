@@ -4,6 +4,7 @@ import Button from '../components/Button.astro';
 import Hero from '../components/Hero.astro';
 import PostPreview from '../components/PostPreview.astro';
 import ProjectPreview from '../components/ProjectPreview.astro';
+import TrustBadges from '../components/TrustBadges.astro';  // ADD THIS
 import siteConfig from '../data/site-config';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { sortItemsByDateDesc } from '../utils/data-utils';
@@ -17,6 +18,8 @@ const featuredProjects = projects.filter(({ data }) => data.isFeatured);
 
 <BaseLayout description={siteConfig.description}>
     <Hero {...siteConfig.hero} />
+    <!-- ADD THIS: Trust Badges -->
+    <TrustBadges />
     {
         featuredProjects?.length > 0 && (
             <div class="mb-16 sm:mb-24">
