@@ -64,6 +64,6 @@ Nếu bạn có câu hỏi, góp ý, hoặc đơn giản là muốn chia sẻ su
 
 📧 Email
 
-Gửi email về: [your-email@example.com]
+Gửi email về: [sangchikin@gmail.com]
 
 Tôi sẽ cố gắng phản hồi sớm nhất có thể.
