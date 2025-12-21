@@ -10,7 +10,7 @@
 :root {
     --text-main: #171717;
     --bg-main: #fafaf7;
-    --bg-muted: #eae9e1;
+    --bg-muted: #dae5e6;
     --border-main: #171717;
 }
 html.dark {
@@ -88,8 +88,12 @@ html.dark {
         @apply font-serif font-medium;
     }
 
-    .prose :where(code, strong) {
+    .prose :where(code) {
         @apply font-medium;
+    }
+
+    strong {
+        @apply font-semibold;
     }
 
     .prose blockquote {
