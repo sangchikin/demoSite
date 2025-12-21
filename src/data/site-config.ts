@@ -47,6 +47,14 @@ const siteConfig: SiteConfig = {
             href: '/terms'
         },
         {
+            text: 'Privacy',
+            href: '/privacy'
+        },
+        { 
+            text: 'Disclaimer', 
+            href: '/disclaimer' 
+        },
+        {
             text: 'Download theme',
             href: 'https://github.com/JustGoodUI/dante-astro-theme'
         }
@@ -81,11 +89,22 @@ const siteConfig: SiteConfig = {
     },
     subscribe: {
         enabled: true,
-        title: 'Subscribe to Dante Newsletter',
-        text: 'One update per week. All the latest posts directly in your inbox.',
+        title: 'Get Weekly Investment Insights',
+        text: 'Join 1,000+ readers building wealth through long-term investing.  One thoughtful email every week.',
         form: {
-            action: '#'
+            // Change to your actual endpoint
+            action: '#',
             // action: 'https://mailchimp.com/...' // 👈 ENDPOINT THẬT
+            // Examples:
+            // Mailchimp: 'https://yourname.us1.list-manage.com/subscribe/post?u=xxx&id=xxx'
+            // Substack: 'https://buttondown.email/api/emails/embed-subscribe/yourname'
+            // Formspree: 'https://formspree.io/f/xxxxx'
+            emailFieldName: 'email',
+            honeypotFieldName: 'url', // spam protection
+            hiddenFields: [
+                // Optional: track source
+                { name: 'source', value: 'blog' }
+            ]
         }
     },
     postsPerPage: 8,

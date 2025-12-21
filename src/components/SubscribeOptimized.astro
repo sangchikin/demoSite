@@ -1,0 +1,98 @@
+---
+import type { Subscribe } from '../types';
+
+type Props = Subscribe & { class?: string };
+
+const { enabled = true, title, text, form, class: className } = Astro.props;
+---
+
+{enabled && (
+    <section class: list={['my-16 sm:my-24', className]}>
+        <div class="bg-muted rounded-lg px-6 sm:px-12 py-12 sm:py-16">
+            <div class="max-w-2xl mx-auto">
+                <!-- Header -->
+                <div class="mb-8 text-center">
+                    {title && (
+                        <h2 class="font-serif text-2xl sm:text-3xl font-medium mb-4">
+                            {title}
+                        </h2>
+                    )}
+                    {text && (
+                        <p class="text-main/70 sm:text-lg">
+                            {text}
+                        </p>
+                    )}
+                </div>
+
+                <!-- Trust Indicators -->
+                <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8 text-sm text-main/60">
+                    <div class="flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                        </svg>
+                        <span>No spam, unsubscribe anytime</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                            <path d="M18 8. 118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                        </svg>
+                        <span>1 email per week</span>
+                    </div>
+                </div>
+
+                <!-- Subscribe Form -->
+                {form?. action && (
+                    <form 
+                        action={form.action} 
+                        method="POST"
+                        class="flex flex-col sm:flex-row gap-3"
+                    >
+                        <!-- Email Input -->
+                        <input
+                            type="email"
+                            name={form.emailFieldName || 'email'}
+                            placeholder="Enter your email"
+                            required
+                            class="flex-1 px-4 py-3 rounded-full border border-main text-sm bg-main/5 placeholder-main/50 focus:outline-none focus:ring-2 focus:ring-main/20"
+                        />
+
+                        <!-- Hidden Fields (if configured) -->
+                        {form.hiddenFields?.map((field) => (
+                            <input
+                                type="hidden"
+                                name={field. name}
+                                value={field.value}
+                            />
+                        ))}
+
+                        <!-- Honeypot Field (spam protection) -->
+                        {form.honeypotFieldName && (
+                            <input
+                                type="text"
+                                name={form. honeypotFieldName}
+                                style={{ display: 'none' }}
+                                aria-hidden="true"
+                                tabindex="-1"
+                                autocomplete="off"
+                            />
+                        )}
+
+                        <!-- Submit Button -->
+                        <button
+                            type="submit"
+                            class="px-6 py-3 rounded-full bg-main text-main/5 font-serif font-medium whitespace-nowrap hover:opacity-90 transition-opacity cursor-pointer"
+                        >
+                            Subscribe
+                        </button>
+                    </form>
+                )}
+
+                <!-- Additional Info -->
+                <p class="text-xs text-main/50 text-center mt-6">
+                    Join 1,000+ investors who read our weekly insights on long-term wealth building. 
+                </p>
+            </div>
+        </div>
+    </section>
+)}

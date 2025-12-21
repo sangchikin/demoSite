@@ -1,0 +1,125 @@
+---
+// Investment Disclaimer - hiển thị warning về financial advice
+type Props = {
+    fullPage?:  boolean; // true = full page, false = compact footer version
+};
+
+const { fullPage = false } = Astro.props;
+---
+
+{! fullPage ?  (
+    // Compact version for footer
+    <div class="bg-muted/50 border border-main/20 rounded-lg p-4 my-8">
+        <p class="text-xs text-main/70">
+            <strong>Disclaimer:</strong> This blog is for educational purposes only. 
+            It is not financial advice. Please consult a qualified financial advisor 
+            before making investment decisions.  
+            <a href="/disclaimer" class="underline hover:text-main">Read full disclaimer</a>
+        </p>
+    </div>
+) : (
+    // Full page version
+    <article class="max-w-3xl mx-auto py-12">
+        <header class="mb-8">
+            <h1 class="font-serif text-4xl leading-tight font-medium sm:text-5xl">
+                Disclaimer & Important Notice
+            </h1>
+            <p class="text-main/70 mt-4">Last updated: January 2025</p>
+        </header>
+
+        <div class="prose sm:prose-lg max-w-none space-y-6">
+            <section>
+                <h2>1. No Professional Financial Advice</h2>
+                <p>
+                    This website and its content are provided for educational and informational purposes only.  
+                    Nothing contained herein should be construed as financial advice, investment recommendation, 
+                    or an offer to buy or sell any financial instruments. 
+                </p>
+                <p>
+                    The author is not a licensed financial advisor, accountant, or investment professional. 
+                    Statements made on this blog are opinions and should not be relied upon as facts.
+                </p>
+            </section>
+
+            <section>
+                <h2>2. Past Performance</h2>
+                <p>
+                    Past performance of any investment is not indicative of future results. Investment returns 
+                    and principal value will fluctuate, so that an investor's shares, when redeemed, may be worth 
+                    more or less than their original cost.
+                </p>
+            </section>
+
+            <section>
+                <h2>3. Risk Disclosure</h2>
+                <p>
+                    All investments carry risk, including: 
+                </p>
+                <ul>
+                    <li>Loss of principal</li>
+                    <li>Market volatility</li>
+                    <li>Inflation risk</li>
+                    <li>Liquidity risk</li>
+                    <li>Company-specific risks</li>
+                </ul>
+                <p>
+                    Long-term investing does not eliminate risk. There is no guarantee any strategy will be successful.
+                </p>
+            </section>
+
+            <section>
+                <h2>4. Individual Circumstances</h2>
+                <p>
+                    Everyone's financial situation is unique. What works for one person may not work for another. 
+                    Before implementing any strategy discussed on this blog, you should: 
+                </p>
+                <ul>
+                    <li>Evaluate your personal financial situation</li>
+                    <li>Consider your investment goals and time horizon</li>
+                    <li>Assess your risk tolerance</li>
+                    <li>Consult with a qualified financial advisor or tax professional</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>5. No Guarantee</h2>
+                <p>
+                    This website makes no representation or warranty, express or implied, as to the accuracy, 
+                    completeness, or timeliness of any information provided. The author does not guarantee the 
+                    accuracy of third-party information referenced on this site.
+                </p>
+            </section>
+
+            <section>
+                <h2>6. Affiliate Disclosure</h2>
+                <p>
+                    [OPTIONAL] This blog may contain affiliate links.  If you click on such links and make a purchase, 
+                    we may earn a commission. However, this does not affect our editorial opinions or recommendations.
+                </p>
+            </section>
+
+            <section>
+                <h2>7. External Links</h2>
+                <p>
+                    This website may contain links to external websites. We are not responsible for the content, 
+                    accuracy, or practices of external websites.  Visiting external links is at your own risk.
+                </p>
+            </section>
+
+            <section>
+                <h2>8. Contact for Questions</h2>
+                <p>
+                    If you have questions about this disclaimer or our content, please 
+                    <a href="/contact" class="text-main hover:underline">contact us</a>.
+                </p>
+            </section>
+
+            <div class="bg-muted/50 border border-main/20 rounded-lg p-6 mt-12">
+                <p class="font-medium mb-2">
+                    ⚠️ By accessing this website, you acknowledge that you have read, understood, and agree 
+                    to be bound by this disclaimer.
+                </p>
+            </div>
+        </div>
+    </article>
+)}

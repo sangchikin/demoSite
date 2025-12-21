@@ -1,5 +1,7 @@
 ---
 import siteConfig from '../data/site-config';
+// Update Footer.astro to include disclaimer
+import Disclaimer from './Disclaimer.astro';
 
 const socialLinks = siteConfig.socialLinks ?? [];
 const navLinks = siteConfig.footerNavLinks ?? [];
@@ -7,6 +9,9 @@ const currentYear = new Date().getFullYear();
 ---
 
 <footer class="mx-auto w-full max-w-3xl pt-12 pb-10 sm:pt-24 sm:pb-14">
+    <!-- Add disclaimer component -->
+    <Disclaimer />
+    
     {
         navLinks.length > 0 && (
             <nav class="mb-4 flex flex-wrap gap-x-6 gap-y-1" aria-label="Footer navigation">

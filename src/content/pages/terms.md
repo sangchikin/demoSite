@@ -1,52 +1,54 @@
 ---
 title: Terms of Service
+slug: terms
 seo:
   title: Terms of Service
   description: Explore the terms and conditions of Dante website for a clear understanding of guidelines and responsibilities.
 ---
 
-**Last updated on January 11, 2024**
+# Terms of Service
 
-These Terms of Service ("Terms") govern your access to and use of [Website Name] ("the Website") and any related services provided by [Website Owner/Company] ("we," "us," or "our"). Please read these Terms carefully before using the Website.
+Last updated: January 2025
 
-**1. Acceptance of Terms**
+## 1. Acceptance of Terms
 
-By accessing or using the Website, you agree to be bound by these Terms and our Privacy Policy. If you do not agree to these Terms or the Privacy Policy, please do not use the Website.
+By accessing this website, you accept these terms and conditions in full.
 
-**2. Changes to Terms**
+## 2. Intellectual Property
 
-We reserve the right to modify, amend, or update these Terms at any time. Such changes will be effective upon posting on the Website. It is your responsibility to review these Terms regularly. Your continued use of the Website after any changes indicates your acceptance of the revised Terms.
+All content on this website (articles, images, logos) is protected by copyright. 
+You may not reproduce, distribute, or transmit content without permission.
 
-**3. Use of the Website**
+## 3. User Conduct
 
-You agree to use the Website for lawful purposes and in a manner consistent with these Terms. You are responsible for any content you post or submit on the Website.
+You agree not to:
+- Harass, abuse, or harm others
+- Post spam or malicious content
+- Attempt to gain unauthorized access
+- Violate any laws or regulations
 
-**4. Registration and Account**
+## 4. Disclaimers
 
-Certain areas of the Website may require registration or the creation of an account. You agree to provide accurate, current, and complete information during the registration process and to update such information to keep it accurate, current, and complete. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.
+This website and its content are provided "as is" without warranties.  
+We do not guarantee accuracy, completeness, or suitability of the information.
 
-**5. Content and Intellectual Property**
+## 5. Limitation of Liability
 
-The content on the Website, including text, graphics, logos, images, audio, video, software, and other materials, is owned or licensed by us and is protected by copyright and other intellectual property laws. You may not use, reproduce, or distribute the content without our prior written consent.
+We are not liable for any direct, indirect, incidental, or consequential damages 
+arising from your use of this website.
 
-**6. Third-Party Links**
+## 6. External Links
 
-The Website may contain links to third-party websites or resources. We do not endorse and are not responsible for the content, products, or services provided by third parties. Your use of such websites is at your own risk.
+We are not responsible for external websites linked from our site.
 
-**7. Termination**
+## 7. Changes to Terms
 
-We may, at our sole discretion, terminate or suspend your access to the Website at any time and for any reason, without notice.
+We may update these terms at any time.  Continued use means acceptance of changes.
 
-**8. Disclaimer**
+## 8. Governing Law
 
-The Website and its content are provided on an "as is" and "as available" basis. We make no warranties or representations about the accuracy or completeness of the content. We do not guarantee that the Website will be error-free or uninterrupted.
+These terms are governed by [Your Jurisdiction] laws.
 
-**9. Limitation of Liability**
+## 9. Contact Us
 
-To the fullest extent permitted by law, we shall not be liable for any direct, indirect, incidental, special, consequential, or exemplary damages, including but not limited to damages for loss of profits, goodwill, use, data, or other intangible losses, arising out of or in connection with the use or inability to use the Website.
-
-**10. Governing Law**
-
-These Terms are governed by and construed in accordance with the laws of [Your Jurisdiction], without regard to its conflict of laws principles. Any disputes arising under these Terms shall be subject to the exclusive jurisdiction of the courts of [Your Jurisdiction].
-
-_Thank you for reading our Terms of Service. By using the Website, you agree to be bound by these Terms._
+For questions about these terms:  [your-email@example.com]
