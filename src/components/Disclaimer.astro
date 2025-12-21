@@ -1,123 +1,143 @@
 ---
-// Investment Disclaimer - hiển thị warning về financial advice
+// Investment Disclaimer - hiển thị cảnh báo về nội dung tài chính
 type Props = {
-    fullPage?:  boolean; // true = full page, false = compact footer version
+    fullPage?: boolean; // true = trang đầy đủ, false = bản rút gọn (footer)
 };
 
 const { fullPage = false } = Astro.props;
 ---
 
-{! fullPage ?  (
-    // Compact version for footer
+{!fullPage ? (
+    // Phiên bản rút gọn cho footer
     <div class="bg-muted/50 border border-main/20 rounded-lg p-4 my-8">
         <p class="text-xs text-main/70">
-            <strong>Disclaimer:</strong> This blog is for educational purposes only. 
-            It is not financial advice. Please consult a qualified financial advisor 
-            before making investment decisions.  
-            <a href="/disclaimer" class="underline hover:text-main">Read full disclaimer</a>
+            <strong>Lưu ý:</strong> Nội dung trên blog chỉ nhằm mục đích chia sẻ kiến thức 
+            và góc nhìn cá nhân. Đây không phải là lời khuyên tài chính. 
+            Trước khi đưa ra bất kỳ quyết định đầu tư nào, bạn nên cân nhắc hoàn cảnh 
+            cá nhân và tham khảo ý kiến của chuyên gia phù hợp.{" "}
+            <a href="/disclaimer" class="underline hover:text-main">
+                Đọc tuyên bố miễn trừ trách nhiệm
+            </a>
         </p>
     </div>
 ) : (
-    // Full page version
+    // Phiên bản đầy đủ
     <article class="max-w-3xl mx-auto py-12">
         <header class="mb-8">
             <h1 class="font-serif text-4xl leading-tight font-medium sm:text-5xl">
-                Disclaimer & Important Notice
+                Tuyên bố miễn trừ trách nhiệm
             </h1>
-            <p class="text-main/70 mt-4">Last updated: January 2025</p>
+            <p class="text-main/70 mt-4">
+                Cập nhật lần cuối: Tháng 01/2025
+            </p>
         </header>
 
         <div class="prose sm:prose-lg max-w-none space-y-6">
             <section>
-                <h2>1. No Professional Financial Advice</h2>
+                <h2>1. Không phải lời khuyên tài chính</h2>
                 <p>
-                    This website and its content are provided for educational and informational purposes only.  
-                    Nothing contained herein should be construed as financial advice, investment recommendation, 
-                    or an offer to buy or sell any financial instruments. 
+                    Website này và toàn bộ nội dung được đăng tải chỉ nhằm mục đích 
+                    giáo dục và cung cấp thông tin tham khảo. Không nội dung nào trên 
+                    website được xem là lời khuyên tài chính, khuyến nghị đầu tư, 
+                    hay đề nghị mua/bán bất kỳ công cụ tài chính nào.
                 </p>
                 <p>
-                    The author is not a licensed financial advisor, accountant, or investment professional. 
-                    Statements made on this blog are opinions and should not be relied upon as facts.
-                </p>
-            </section>
-
-            <section>
-                <h2>2. Past Performance</h2>
-                <p>
-                    Past performance of any investment is not indicative of future results. Investment returns 
-                    and principal value will fluctuate, so that an investor's shares, when redeemed, may be worth 
-                    more or less than their original cost.
+                    Tác giả không phải là cố vấn tài chính được cấp phép, kế toán viên 
+                    hay chuyên gia đầu tư. Các quan điểm được chia sẻ phản ánh góc nhìn 
+                    cá nhân tại thời điểm viết và không nên được xem là sự thật tuyệt đối.
                 </p>
             </section>
 
             <section>
-                <h2>3. Risk Disclosure</h2>
+                <h2>2. Hiệu suất trong quá khứ</h2>
                 <p>
-                    All investments carry risk, including: 
+                    Hiệu suất đầu tư trong quá khứ không đảm bảo cho kết quả trong tương lai. 
+                    Giá trị tài sản và lợi nhuận có thể biến động theo thời gian. 
+                    Khi rút vốn, giá trị nhận về có thể cao hơn hoặc thấp hơn số tiền ban đầu.
+                </p>
+            </section>
+
+            <section>
+                <h2>3. Rủi ro đầu tư</h2>
+                <p>
+                    Mọi hình thức đầu tư đều tiềm ẩn rủi ro, bao gồm nhưng không giới hạn:
                 </p>
                 <ul>
-                    <li>Loss of principal</li>
-                    <li>Market volatility</li>
-                    <li>Inflation risk</li>
-                    <li>Liquidity risk</li>
-                    <li>Company-specific risks</li>
+                    <li>Mất một phần hoặc toàn bộ vốn</li>
+                    <li>Biến động thị trường</li>
+                    <li>Rủi ro lạm phát</li>
+                    <li>Rủi ro thanh khoản</li>
+                    <li>Rủi ro riêng của từng doanh nghiệp hoặc tài sản</li>
                 </ul>
                 <p>
-                    Long-term investing does not eliminate risk. There is no guarantee any strategy will be successful.
+                    Đầu tư dài hạn có thể giúp giảm một số rủi ro, nhưng không loại bỏ 
+                    hoàn toàn rủi ro. Không có chiến lược nào đảm bảo chắc chắn thành công.
                 </p>
             </section>
 
             <section>
-                <h2>4. Individual Circumstances</h2>
+                <h2>4. Hoàn cảnh cá nhân</h2>
                 <p>
-                    Everyone's financial situation is unique. What works for one person may not work for another. 
-                    Before implementing any strategy discussed on this blog, you should: 
+                    Mỗi người có hoàn cảnh tài chính, mục tiêu và khả năng chịu rủi ro khác nhau. 
+                    Những gì phù hợp với người khác có thể không phù hợp với bạn.
+                </p>
+                <p>
+                    Trước khi áp dụng bất kỳ chiến lược nào được đề cập trên blog, bạn nên:
                 </p>
                 <ul>
-                    <li>Evaluate your personal financial situation</li>
-                    <li>Consider your investment goals and time horizon</li>
-                    <li>Assess your risk tolerance</li>
-                    <li>Consult with a qualified financial advisor or tax professional</li>
+                    <li>Đánh giá tình hình tài chính cá nhân</li>
+                    <li>Xác định mục tiêu và khung thời gian đầu tư</li>
+                    <li>Hiểu rõ mức độ chấp nhận rủi ro của bản thân</li>
+                    <li>Tham khảo ý kiến của cố vấn tài chính hoặc chuyên gia thuế phù hợp</li>
                 </ul>
             </section>
 
             <section>
-                <h2>5. No Guarantee</h2>
+                <h2>5. Không có sự đảm bảo</h2>
                 <p>
-                    This website makes no representation or warranty, express or implied, as to the accuracy, 
-                    completeness, or timeliness of any information provided. The author does not guarantee the 
-                    accuracy of third-party information referenced on this site.
+                    Website không đưa ra bất kỳ cam kết hay bảo đảm nào, dù rõ ràng hay ngụ ý, 
+                    về tính chính xác, đầy đủ hoặc kịp thời của thông tin. 
+                    Tác giả cũng không chịu trách nhiệm đối với độ chính xác của thông tin 
+                    từ các nguồn bên thứ ba được trích dẫn.
                 </p>
             </section>
 
             <section>
-                <h2>6. Affiliate Disclosure</h2>
+                <h2>6. Liên kết tiếp thị (Affiliate)</h2>
                 <p>
-                    [OPTIONAL] This blog may contain affiliate links.  If you click on such links and make a purchase, 
-                    we may earn a commission. However, this does not affect our editorial opinions or recommendations.
+                    <em>[Tuỳ chọn]</em> Website có thể chứa liên kết tiếp thị. 
+                    Nếu bạn nhấp vào các liên kết này và thực hiện giao dịch, 
+                    chúng tôi có thể nhận được hoa hồng. Điều này không ảnh hưởng 
+                    đến quan điểm, nội dung hay tính độc lập biên tập của blog.
                 </p>
             </section>
 
             <section>
-                <h2>7. External Links</h2>
+                <h2>7. Liên kết bên ngoài</h2>
                 <p>
-                    This website may contain links to external websites. We are not responsible for the content, 
-                    accuracy, or practices of external websites.  Visiting external links is at your own risk.
+                    Website có thể chứa liên kết đến các trang web bên ngoài. 
+                    Chúng tôi không chịu trách nhiệm về nội dung, độ chính xác 
+                    hoặc chính sách của các website đó. Việc truy cập các liên kết 
+                    bên ngoài là quyết định và rủi ro của riêng bạn.
                 </p>
             </section>
 
             <section>
-                <h2>8. Contact for Questions</h2>
+                <h2>8. Liên hệ</h2>
                 <p>
-                    If you have questions about this disclaimer or our content, please 
-                    <a href="/contact" class="text-main hover:underline">contact us</a>.
+                    Nếu bạn có câu hỏi liên quan đến tuyên bố miễn trừ trách nhiệm 
+                    hoặc nội dung trên website, vui lòng{" "}
+                    <a href="/contact" class="text-main hover:underline">
+                        liên hệ với chúng tôi
+                    </a>.
                 </p>
             </section>
 
             <div class="bg-muted/50 border border-main/20 rounded-lg p-6 mt-12">
                 <p class="font-medium mb-2">
-                    ⚠️ By accessing this website, you acknowledge that you have read, understood, and agree 
-                    to be bound by this disclaimer.
+                    ⚠️ Khi truy cập và sử dụng website này, bạn xác nhận rằng 
+                    mình đã đọc, hiểu và đồng ý với toàn bộ nội dung tuyên bố 
+                    miễn trừ trách nhiệm trên.
                 </p>
             </div>
         </div>
