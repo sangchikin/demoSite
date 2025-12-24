@@ -5,16 +5,17 @@ import FormattedDate from './FormattedDate.astro';
 type Props = {
     newsletters: CollectionEntry<'newsletter'>[];
     class?: string;
+    showArchiveHeader?: boolean; // Thêm props này
 };
 
-const { newsletters, class: className } = Astro.props;
+const { newsletters, class: className, showArchiveHeader = true } = Astro.props;
 
 // Group newsletters by year
 const groupedByYear = newsletters.reduce(
     (acc, newsletter) => {
         const year = new Date(newsletter.data.publishDate).getFullYear();
         if (!acc[year]) acc[year] = [];
-        acc[year].push(newsletter);
+        acc[year]. push(newsletter);
         return acc;
     },
     {} as Record<number, CollectionEntry<'newsletter'>[]>
@@ -24,31 +25,42 @@ const groupedByYear = newsletters.reduce(
 const sortedYears = Object.keys(groupedByYear)
     .map(Number)
     .sort((a, b) => b - a);
+
+// Format date as "Jan 15"
+const formatDateShort = (date: Date) => {
+    const formatter = new Intl.DateTimeFormat('en-US', { 
+        month: 'short', 
+        day: 'numeric' 
+    });
+    return formatter. format(date);
+};
 ---
 
-<div class: list={['space-y-12', className]}>
+<div class:list={['space-y-12', className]}>
     {sortedYears.map((year) => (
         <section>
-            <div class="flex items-center gap-4 mb-8">
-                <h2 class="font-serif text-4xl font-bold">Archive</h2>
-                <span class="px-4 py-2 rounded-full border-2 border-main text-main font-medium text-sm">
-                    {year}
-                </span>
-            </div>
+            {showArchiveHeader && (
+                <div class="flex items-center gap-4 mb-8">
+                    <h2 class="font-serif text-4xl font-bold">Nhật Ký</h2>
+                    <span class="px-4 py-2 rounded-full border-2 border-main text-main font-medium text-sm">
+                        {year}
+                    </span>
+                </div>
+            )}
 
-            <div class="space-y-0 divide-y divide-main/10">
+            <div class="space-y-3">
                 {groupedByYear[year].map((newsletter) => (
                     <a
                         href={`/newsletter/${newsletter.id}`}
-                        class="group flex items-center justify-between py-4 px-6 hover:bg-muted/50 transition-colors"
+                        class="group flex items-center gap-4 py-2 hover:opacity-70 transition-opacity"
                     >
                         <div class="flex-1 min-w-0">
-                            <h3 class="font-serif text-lg font-medium group-hover:underline truncate">
+                            <h3 class="font-serif text-xl font-medium group-hover:underline">
                                 {newsletter. data.title}
                             </h3>
                         </div>
-                        <div class="ml-4 flex-shrink-0 text-sm text-main/70">
-                            <FormattedDate date={newsletter.data.publishDate} />
+                        <div class="flex-shrink-0 text-sm text-main/70 whitespace-nowrap">
+                            {formatDateShort(newsletter. data.publishDate)}
                         </div>
                     </a>
                 ))}

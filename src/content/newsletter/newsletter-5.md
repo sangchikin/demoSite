@@ -1,5 +1,5 @@
 ---
-title:  Markdown Typography Showcase
+title:  On finding your desired lifestyle, a simple rule for life, and working with what you have
 publishDate: 2025-01-15
 excerpt: A comprehensive guide to markdown formatting and typography
 ---
