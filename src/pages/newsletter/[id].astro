@@ -1,0 +1,41 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FormattedDate from '../../components/FormattedDate.astro';
+import { marked } from 'marked';
+import fs from 'fs';
+import path from 'path';
+
+export async function getStaticPaths() {
+    const newsletters = await getCollection('newsletter');
+    return newsletters.map((newsletter) => ({
+        params: { id: newsletter.id },
+        props: { newsletter },
+    }));
+}
+
+type Props = {
+    newsletter: CollectionEntry<'newsletter'>;
+};
+
+const { newsletter } = Astro.props;
+
+// Read file directly
+const filePath = path.join(process. cwd(), `src/content/newsletter/${newsletter. id}.md`);
+const fileContent = fs.readFileSync(filePath, 'utf-8');
+const contentWithoutFrontmatter = fileContent.split('---').slice(2).join('---');
+const htmlContent = marked(contentWithoutFrontmatter);
+---
+
+<BaseLayout title={newsletter.data.title} description={newsletter.data.description || newsletter. data.title}>
+    <article class="max-w-3xl">
+        <header class="mb-12">
+            <h1 class="font-serif text-4xl font-bold mb-4">{newsletter.data.title}</h1>
+            <div class="text-main/70 text-sm">
+                <FormattedDate date={newsletter.data.publishDate} />
+            </div>
+        </header>
+        
+        <div class="prose prose-invert max-w-none" set:html={htmlContent} />
+    </article>
+</BaseLayout>

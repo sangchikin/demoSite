@@ -17,6 +17,7 @@ const projects = (await getCollection('projects')).sort(sortItemsByDateDesc);
 const featuredProjects = projects.filter(({ data }) => data.isFeatured);
 
 const newsletters = (await getCollection('newsletter')).sort(sortItemsByDateDesc);
+const featuredNewsletters = newsletters.slice(0, 5); // Show top 5 newest
 ---
 
 <BaseLayout description={siteConfig.description}>
@@ -37,7 +38,17 @@ const newsletters = (await getCollection('newsletter')).sort(sortItemsByDateDesc
         )
     }
 
-    <NewsletterArchive newsletters={newsletters} />
+    {
+        newsletters?.length > 0 && (
+            <div class="mb-16 sm:mb-24">
+                <h2 class="mb-12 font-serif text-xl italic sm:mb-16 sm:text-2xl">Newsletters</h2>
+                <NewsletterArchive newsletters={featuredNewsletters} />
+                <div class="mt-12 sm:mt-16">
+                    <Button href="/newsletter">View All Newsletters</Button>
+                </div>
+            </div>
+        )
+    }
 
     {
         featuredPosts?.length > 0 && (

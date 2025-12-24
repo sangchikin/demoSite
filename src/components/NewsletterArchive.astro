@@ -4,7 +4,7 @@ import FormattedDate from './FormattedDate.astro';
 
 type Props = {
     newsletters: CollectionEntry<'newsletter'>[];
-    class?:  string;
+    class?: string;
 };
 
 const { newsletters, class: className } = Astro.props;
@@ -28,9 +28,9 @@ const sortedYears = Object.keys(groupedByYear)
 
 <div class: list={['space-y-12', className]}>
     {sortedYears.map((year) => (
-        <section class="mb-16 sm:mb-24">
+        <section>
             <div class="flex items-center gap-4 mb-8">
-                <h3 class="font-sans text-4xl font-bold">Nhật ký</h3>
+                <h2 class="font-serif text-4xl font-bold">Archive</h2>
                 <span class="px-4 py-2 rounded-full border-2 border-main text-main font-medium text-sm">
                     {year}
                 </span>
@@ -44,7 +44,7 @@ const sortedYears = Object.keys(groupedByYear)
                     >
                         <div class="flex-1 min-w-0">
                             <h3 class="font-serif text-lg font-medium group-hover:underline truncate">
-                                {newsletter.data. title}
+                                {newsletter. data.title}
                             </h3>
                         </div>
                         <div class="ml-4 flex-shrink-0 text-sm text-main/70">
