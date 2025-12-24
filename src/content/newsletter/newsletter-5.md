@@ -1,6 +1,5 @@
 ---
 title:  Markdown Typography Showcase
-slug: newsletter-1
 publishDate: 2025-01-15
 excerpt: A comprehensive guide to markdown formatting and typography
 ---
