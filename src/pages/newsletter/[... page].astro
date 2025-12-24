@@ -1,20 +1,10 @@
 ---
-import type { GetStaticPathsOptions, Page } from 'astro';
-import { type CollectionEntry, getCollection } from 'astro:content';
+import { getCollection } from 'astro:content';
 import NewsletterArchive from '../../components/NewsletterArchive.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { sortItemsByDateDesc } from '../../utils/data-utils';
-import siteConfig from '../../data/site-config';
 
-export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
-    const newsletters = (await getCollection('newsletter')).sort(sortItemsByDateDesc);
-    return paginate(newsletters, { pageSize: siteConfig.postsPerPage || 10 });
-}
-
-type Props = { page: Page<CollectionEntry<'newsletter'>> };
-
-const { page } = Astro.props;
-const newsletters = page.data;
+const newsletters = (await getCollection('newsletter')).sort(sortItemsByDateDesc);
 ---
 
 <BaseLayout title="Newsletter Archive" description="Explore our investment newsletters">
