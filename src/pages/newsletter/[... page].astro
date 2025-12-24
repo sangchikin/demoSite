@@ -1,0 +1,12 @@
+---
+import { getCollection } from 'astro: content';
+import NewsletterArchive from '../../components/NewsletterArchive.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { sortItemsByDateDesc } from '../../utils/data-utils';
+
+const newsletters = (await getCollection('newsletter')).sort(sortItemsByDateDesc);
+---
+
+<BaseLayout title="Newsletter Archive" description="Explore our investment newsletters">
+    <NewsletterArchive newsletters={newsletters} />
+</BaseLayout>

@@ -95,4 +95,16 @@ const resources = defineCollection({
         })
 });
 
-export const collections = { blog, pages, projects, courses, resources };
+const newsletter = defineCollection({
+    loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/newsletter' }),
+    schema: ({ image }) =>
+        z.object({
+            title: z.string(),
+            description: z.string().optional(),
+            publishDate: z.coerce.date(),
+            isFeatured: z.boolean().default(false),
+            seo: seoSchema(image).optional()
+        })
+});
+
+export const collections = { blog, pages, projects, courses, resources, newsletter };

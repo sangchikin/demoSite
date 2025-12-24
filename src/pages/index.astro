@@ -7,6 +7,7 @@ import ProjectPreview from '../components/ProjectPreview.astro';
 import TrustBadges from '../components/TrustBadges.astro';  // ADD THIS
 import siteConfig from '../data/site-config';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import NewsletterArchive from '../components/NewsletterArchive.astro';
 import { sortItemsByDateDesc } from '../utils/data-utils';
 
 const posts = (await getCollection('blog')).sort(sortItemsByDateDesc);
@@ -14,6 +15,8 @@ const featuredPosts = posts.filter(({ data }) => data.isFeatured);
 
 const projects = (await getCollection('projects')).sort(sortItemsByDateDesc);
 const featuredProjects = projects.filter(({ data }) => data.isFeatured);
+
+const newsletters = (await getCollection('newsletter')).sort(sortItemsByDateDesc);
 ---
 
 <BaseLayout description={siteConfig.description}>
@@ -33,6 +36,9 @@ const featuredProjects = projects.filter(({ data }) => data.isFeatured);
             </div>
         )
     }
+
+    <NewsletterArchive newsletters={newsletters} />
+
     {
         featuredPosts?.length > 0 && (
             <div class="mb-16 sm:mb-24">
